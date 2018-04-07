@@ -10,37 +10,53 @@
 
   <body>
     <!-- comment
+      <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
      -->
     <div id="flex-content-container">
-      <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+      <nav class="navbar navbar-toggleable-md navbar-light">
+        <div class= "container">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
           <a class="navbar-brand" href=/>
-            <img src="/assets/nuurdle.png" width="40" height="40" alt="">
-            <img src="/assets/nuurdle-word.png" width="150" height="50" alt="">
+            <img src="/assets/nuurdle.png" width="65" height="60" alt="">
+            <img src="/assets/nuurdle-word.png" width="210" height="60" alt="">
           </a>
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-            <li class="nav-item">
+            <li class="nav-item nrdl-bar">
               <a class="nav-link" href=about>what is nuurdle</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item nrdl-bar">
               <a class="nav-link" href=download>get nüurdle</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item nrdl-bar">
               <a class="nav-link" href=find>test drive</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item nrdl-bar">
               <a class="nav-link" href=blog>blog</a>
             </li>
           </ul>
         </div>
+      </div>
       </nav>
 
-    <%= yield %>
+      <%= yield %>
     </div>
+
     
+    <!-- comment
+
+     -->
     <div id="footer">
       <div class="container">
         <b>Footer Here</b>
@@ -48,5 +64,12 @@
         <%= link_to 'Link', '#' %>
       </div>
     </div>
+
+
+
+
+
+
+
   </body>
 </html>

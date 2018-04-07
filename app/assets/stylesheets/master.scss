@@ -1,9 +1,11 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Poppins:150,200,300');
+
 
 .navbar {
   font-family: "Helvetica Neue", Helvetica;
   font-weight: 200;
-  box-shadow: 0px 1px 3px #2a2a2a;
+
 }
 
 .navbar-inverse a.navbar-brand {
@@ -12,6 +14,105 @@
   color: white;
 }
 
+
+
+.hero {
+  background: image_url('shared-a-moment.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 900px;
+
+}
+
+.nrdl-head {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  font-weight: 200;
+  color: #485154;
+  font-size: 44px;
+}
+
+.nrdl-text {
+  font-family: 'Poppins', sans-serif;
+  color: #485154;
+  font-weight: 150;
+  font-size: 28px;
+}
+
+.cntr {
+    text-align: center;
+}
+
+.lft {
+    text-align: left;
+}
+
+.rgt {
+    text-align: right;
+}
+
+
+.nrdl-bar {
+  font-family: 'Poppins', sans-serif;
+  color: #485154;
+  font-weight: 150;
+  font-size: 18px;
+}
+
+.store-link-cntr {
+    margin: auto;
+    padding: 10px;
+}
+
+
+// for the donwload page
+
+.community {
+  background: image_url('comunity-nuurdle.png') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 850px;
+
+}
+
+.frosty {
+  background: rgba(54,61,64,0.75);
+  color: white;
+}
+
+.frosty h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 100;
+  text-shadow: 1px 1px 1px #000;
+}
+
+
+.frosty h2 {
+  font-family: "Helvetica Neue", Helvetica;
+  font-weight: 200;
+  text-shadow: rgba(0, 0, 0, 0.95) 1px 1px;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// Carousel styles
 /*
 Removes white gap between slides - chagnge to base color of slide images
 */
