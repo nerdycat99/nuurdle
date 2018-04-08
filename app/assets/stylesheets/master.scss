@@ -30,20 +30,47 @@
 
 }
 
-.nrdl-head {
-  font-family: 'Poppins', sans-serif;
-  text-align: center;
-  font-weight: 200;
-  color: #485154;
-  font-size: 44px;
+
+
+@media (max-width: 2020px) {
+
+  .nrdl-head {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-weight: 200;
+    color: #485154;
+    font-size: 44px;
+  }
+
+  .nrdl-text {
+    font-family: 'Poppins', sans-serif;
+    color: #485154;
+    font-weight: 150;
+    font-size: 28px;
+  }
+
+}
+  @media (max-width: 768px) {
+
+  .nrdl-head {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-weight: 200;
+    color: #485154;
+    font-size: 30px;
+  }
+
+  .nrdl-text {
+    font-family: 'Poppins', sans-serif;
+    color: #485154;
+    font-weight: 150;
+    font-size: 18px;
+  }
+
 }
 
-.nrdl-text {
-  font-family: 'Poppins', sans-serif;
-  color: #485154;
-  font-weight: 150;
-  font-size: 28px;
-}
+
+
 
 .cntr {
     text-align: center;
