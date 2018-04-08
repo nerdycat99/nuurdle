@@ -18,17 +18,13 @@
   <body>
     
     <!-- comment
-      <meta name="viewport" content="width=device-width">
-      <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-        <div class= "container">
-     -->
-    <div id="flex-content-container">
+          <div id="flex-content-container">
       <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-xs-10 offset-xs-1">
         <nav class="navbar navbar-toggleable-md navbar-light">
 
             <a class="navbar-brand" href=/>
               <img src="/assets/nuurdle.png" width="40" height="40" alt="">
-              <img src="/assets/nuurdle-word.png" width="100" height="50" alt="">
+              <img src="/assets/nuurdle-word.png" width="150" height="50" alt="">
             </a>
 
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -57,6 +53,47 @@
  
     <%= yield %>
     </div>
+     -->
+
+    <div class="flex-content-container">
+      <div class="col-8 offset-2">
+        <nav class="navbar navbar-toggleable-md navbar-light">
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <%= link_to 'Flixster', root_path, class: 'navbar-brand' %>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto mt-2 mt-md-0">
+              <li class="nav-item nrdl-bar">
+                <a class="nav-link" href=about>about</a>
+              </li>
+              <li class="nav-item nrdl-bar">
+                <a class="nav-link" href=download>download</a>
+              </li>
+              <li class="nav-item nrdl-bar">
+                <a class="nav-link" href=find>try</a>
+              </li>
+              <li class="nav-item nrdl-bar">
+                <a class="nav-link" href=blog>blog</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+          <% if notice.present? %>
+            <p class="notice"><%= notice %></p>
+          <% end %>
+          <% if alert.present? %>
+            <p class="alert"><%= alert %></p>
+          <% end %>
+
+
+      
+      </div>    
+        <%= yield %>
+      
+    </div> 
 
     
     <!-- comment
