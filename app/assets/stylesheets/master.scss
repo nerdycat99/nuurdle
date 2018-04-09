@@ -1,5 +1,5 @@
 @import "bootstrap";
-@import url('https://fonts.googleapis.com/css?family=Poppins:150,200,300');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,150,200,300');
 
 
 .navbar {
@@ -49,6 +49,13 @@
     font-size: 28px;
   }
 
+    .nrdl-lite {
+    font-family: 'Poppins', sans-serif;
+    color: #485154;
+    font-weight: 150;
+    font-size: 18px;
+  }
+
     // for the donwload page
   .community {
     background: image_url('comunity-nuurdle.png') no-repeat center center fixed; 
@@ -86,6 +93,13 @@
     font-size: 17px;
   }
 
+  .nrdl-lite {
+    font-family: 'Poppins', sans-serif;
+    color: #485154;
+    font-weight: 150;
+    font-size: 14px;
+  }
+
   // for the download page
   .community {
     background: image_url('comunity-nuurdle.png') no-repeat center center fixed; 
@@ -106,11 +120,19 @@
     width: 70%;
   }
 
-
 }
 
 
 
+.booyah-box {
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  padding: 10px;
+}
 
 .cntr {
     text-align: center;
