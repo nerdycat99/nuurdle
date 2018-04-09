@@ -49,6 +49,16 @@
     font-size: 28px;
   }
 
+    // for the donwload page
+  .community {
+    background: image_url('comunity-nuurdle.png') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 100%;
+    height: 1500px;
+  }
+
 }
   @media (max-width: 768px) {
 
@@ -57,15 +67,26 @@
     text-align: center;
     font-weight: 200;
     color: #485154;
-    font-size: 30px;
+    font-size: 24px;
   }
 
   .nrdl-text {
     font-family: 'Poppins', sans-serif;
     color: #485154;
     font-weight: 150;
-    font-size: 18px;
+    font-size: 17px;
   }
+
+  // for the donwload page
+  .community {
+    background: image_url('comunity-nuurdle.png') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 100%;
+    height: 190px;
+  }
+
 
 }
 
@@ -98,17 +119,6 @@
 }
 
 
-// for the donwload page
-
-.community {
-  background: image_url('comunity-nuurdle.png') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: 100%;
-  height: 500px;
-
-}
 
 .frosty {
   background: rgba(54,61,64,0.75);
@@ -130,11 +140,14 @@
 
 .btn {
   border-radius: 25px;
+  margin-bottom: 10px;
 }
 
 @-ms-viewport{
   width: device-width;
 }
+
+
 
 
 
