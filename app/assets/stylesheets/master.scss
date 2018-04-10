@@ -34,9 +34,22 @@
 
 @media (max-width: 2020px) {
 
+
+  .cntrifmob {
+    text-align: left;
+  }
+
   .nrdl-head {
     font-family: 'Poppins', sans-serif;
     text-align: center;
+    font-weight: 200;
+    color: #485154;
+    font-size: 44px;
+  }
+
+  .nrdl-head-about {
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
     font-weight: 200;
     color: #485154;
     font-size: 44px;
@@ -78,7 +91,19 @@
 }
   @media (max-width: 768px) {
 
+  .cntrifmob {
+    text-align: center;
+  }
+
   .nrdl-head {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-weight: 200;
+    color: #485154;
+    font-size: 24px;
+  }
+
+  .nrdl-head-about {
     font-family: 'Poppins', sans-serif;
     text-align: center;
     font-weight: 200;
