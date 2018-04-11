@@ -104,13 +104,41 @@
      -->
     <div id="footer">
       <div class="container">
-        <b>Footer Here</b>
+        <div class = "row">
+          <div class = "col-sm-12">
+            <img src="/assets/nuurdle-word.png" width="150" height="50" alt="">
+            <img src="/assets/nuurdle.png" width="36" height="36" alt=""> 
+          </a>
+          </div>
+        </div>
         <br />
-        <%= link_to 'Link', '#' %><br/>
-        <b>Footer Here</b>
-        <br />
-        <%= link_to 'Link', '#' %><br/>
+        <div class = "row">
+          <div class = "col-sm-4">
+            <%= mail_to 'feedback@nuurdle.com', 'something to tell us?' %><br/>
+            <%= mail_to 'support@nuurdle.com', 'need some help?' %><br/>
+            <%= mail_to 'pr@nuurdle.com', 'public relations and media' %><br/>
+            <br />
+          </div>
+          
 
+          <div class = "col-sm-4">
+            <%= link_to 'faq', faq_path %><br/>
+            <%= link_to 'guidelines', guidelines_path %><br/>
+            <%= link_to 'privacy', privacy_path %><br/>
+            <br />
+          </div>
+
+          <div class = "col-sm-4">
+
+            <b>Footer Here 3</b>
+            <br />
+            <%= link_to 'Link', '#' %><br/>
+            <b>Footer Here</b>
+            <br />
+            <%= link_to 'Link', '#' %><br/>
+          </div>
+
+        </div>
       </div>
     </div>
 

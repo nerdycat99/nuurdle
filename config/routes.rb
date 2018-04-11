@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   get 'download', to: 'static_pages#download'
   get 'find', to: 'static_pages#find'
   get 'blog', to: 'static_pages#blog'
+  get 'faq', to: 'static_pages#faq'
+  get 'guidelines', to: 'static_pages#guidelines'
+  get 'privacy', to: 'static_pages#privacy'
 end

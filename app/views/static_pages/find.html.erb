@@ -1,1 +1,92 @@
 <h1>find</h1>
+  <script>
+    function initMap() {
+    	var initMyLatLng = {lat: 44, lng: 14};
+
+
+      getLocation();
+    }
+
+
+
+
+function getLocation(map) {
+
+	var options = {
+  enableHighAccuracy: true,
+  timeout: 55000,
+  maximumAge: 0
+};
+
+function success(position) {
+//  var crd = pos.coords;
+
+
+		var myLatLng = {lat: position.coords.latitude, lng: position.coords.longitude};
+    	alert(myLatLng);
+      var map = new google.maps.Map(document.getElementById('map'), {
+         zoom: 12,
+         center: myLatLng
+      });
+
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Hello World!'
+      });
+
+
+
+}
+
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+navigator.geolocation.getCurrentPosition(success, error, options);
+
+/*
+	var x = document.getElementById("demo");
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, options);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+*/
+}
+
+
+
+
+
+
+function showPosition(position) {
+		
+		var myLatLng = {lat: position.coords.latitude, lng: position.coords.longitude};
+    	alert(myLatLng);
+      var map = new google.maps.Map(document.getElementById('map'), {
+         zoom: 12,
+         center: myLatLng
+      });
+
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Hello World!'
+      });
+
+    
+
+}
+
+
+
+
+
+  </script>
+
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtVo6lca3eyGxppXGIjIdHLwhiAQgTLmo&callback=initMap">
+  </script>
+
+  <div id="map"></div>
