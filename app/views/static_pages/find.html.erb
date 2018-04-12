@@ -1,9 +1,7 @@
 <h1>find</h1>
   <script>
     function initMap() {
-    	var initMyLatLng = {lat: 44, lng: 14};
-
-
+    	// var initMyLatLng = {lat: 44, lng: 14};
       getLocation();
     }
 
@@ -19,23 +17,18 @@ function getLocation(map) {
 };
 
 function success(position) {
-//  var crd = pos.coords;
+			
+	var myLatLng = {lat: position.coords.latitude, lng: position.coords.longitude};
+	var map = new google.maps.Map(document.getElementById('map'), {
+	   zoom: 12,
+	   center: myLatLng
+	});
 
-
-		var myLatLng = {lat: position.coords.latitude, lng: position.coords.longitude};
-    	alert(myLatLng);
-      var map = new google.maps.Map(document.getElementById('map'), {
-         zoom: 12,
-         center: myLatLng
-      });
-
-      var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        title: 'Hello World!'
-      });
-
-
+	var marker = new google.maps.Marker({
+	  position: myLatLng,
+	  map: map,
+	  title: 'my address'
+	});
 
 }
 
@@ -52,36 +45,28 @@ navigator.geolocation.getCurrentPosition(success, error, options);
     } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
-*/
+
 }
-
-
-
 
 
 
 function showPosition(position) {
 		
-		var myLatLng = {lat: position.coords.latitude, lng: position.coords.longitude};
-    	alert(myLatLng);
-      var map = new google.maps.Map(document.getElementById('map'), {
-         zoom: 12,
-         center: myLatLng
-      });
+	var myLatLng = {lat: position.coords.latitude, lng: position.coords.longitude};
+  	alert(myLatLng);
+    var map = new google.maps.Map(document.getElementById('map'), {
+       zoom: 12,
+       center: myLatLng
+    });
 
-      var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        title: 'Hello World!'
-      });
-
-    
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title: 'Hello World!'
+    });
 
 }
-
-
-
-
+*/
 
   </script>
 
@@ -90,3 +75,5 @@ function showPosition(position) {
   </script>
 
   <div id="map"></div>
+
+  
