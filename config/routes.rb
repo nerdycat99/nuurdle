@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   get 'blog', to: 'static_pages#blog'
   get 'faq', to: 'static_pages#faq'
   get 'guidelines', to: 'static_pages#guidelines'
-  get 'privacy', to: 'static_pages#privacy'
+  get 'tac', to: 'static_pages#tac'
 end
