@@ -4,7 +4,7 @@
     <a>tips and guidelines</a>
   <br />
   <div class = "row">
-    <div class="col-sm-4 guidelines-box" id="demo">
+    <div class="col-sm-4 guidelines-box" id="privacy">
       <div class = "nrdl-text">privacy</div>
       <div class = "nrdl-lite">
 				so, you've created a nüurdle, the person you saw has responded, you've accepted and you are chatting away. great, that's what nüurdle is here for! <br />
@@ -13,7 +13,7 @@
 				<br /><br />
       </div>
     </div>
-    <div class = "col-sm-4 guidelines-box" id="demo1">
+    <div class = "col-sm-4 guidelines-box" id="security">
       <div class = "nrdl-text">security</div>
 			<div class = "nrdl-lite">
 				one thing to keep an eye out for is if someone sends you a response or chat message with links to other websites, or tries to sell you something. <br />that's not what nüurdle is about and that's probably not something you'd do yourself so please if someone does send you links use caution.<br />
@@ -21,7 +21,7 @@
 				<br /><br />
 			</div>
     </div>
-    <div class = "col-sm-4 guidelines-box">
+    <div class = "col-sm-4 guidelines-box" id="behaviour">
       <div class = "nrdl-text">behaviour</div>
       <div class = "nrdl-lite">
 				most people are going to use nüurdle like they'd use any technology, responsibly to make their lives just that little bit easier, that's why we developed nüurdle, to help you connect. however, there are always a few people... <br />
@@ -32,21 +32,21 @@
   </div>
 
   <div class = "row">
-    <div class="col-sm-4 guidelines-box">
+    <div class="col-sm-4 guidelines-box" id="safety">
       <div class = "nrdl-text">safety</div>
       <div class = "nrdl-lite">
         remember that whilst nüurdle is a great tool to help you meet people you still need to exercise some basic common sense, like with most things. <br />It's always a good idea to let someone know where you are going if you meet up with people again, though of course the great thing about nüurdle is you've already met the other person in real life!
         <br /><br />
       </div>
     </div>
-    <div class = "col-sm-4 guidelines-box">
+    <div class = "col-sm-4 guidelines-box" id="etiquette">
       <div class = "nrdl-text">etiquette</div>
       <div class = "nrdl-lite">
         yes you can probably use nüurdle to find and respond to nüurdles when you know you are not the other party but really, what's the point of that. If you receive a response from someone you know isn't the other person you are trying to connect with you can ignore their response, reject it or if you really don't care for what you are reading simply block them.
         <br /><br />
       </div>
     </div>
-    <div class = "col-sm-4 guidelines-box">
+    <div class = "col-sm-4 guidelines-box" id="nuurdleMe">
       <div class = "nrdl-text">nüurdleMe</div>
       <div class = "nrdl-lite">
         you can turn nüurdleMe mode on or off. when on you get alerts, when off you won't receive any notifications and nüurdle won't know where you are or where you've been. <br />if you switch nüurdleMe mode on you receive an alert anytime someone posts a nüurdle where you are now, or where you've been in the past whilst in nüurdleMe mode. <br />
@@ -54,25 +54,42 @@
       </div>
     </div>
   </div>
-
+  <br />
 
 </div>
 
 
 
 <script>
-document.getElementById("demo").onmouseover = function() {mouseOver()};
-document.getElementById("demo").onmouseout = function() {mouseOut()};
-document.getElementById("demo1").onmouseover = function() {mouseOver()};
-document.getElementById("demo1").onmouseout = function() {mouseOut()};
+document.getElementById("privacy").onmouseover = function() {mouseOver("privacy")};
+document.getElementById("privacy").onmouseout = function() {mouseOut("privacy")};
 
-function mouseOver() {
-    document.getElementById("demo").style.background = "#f9e8eb";
-    document.getElementById("demo1").style.background = "#f9e8eb";
+document.getElementById("security").onmouseover = function() {mouseOver("security")};
+document.getElementById("security").onmouseout = function() {mouseOut("security")};
+
+document.getElementById("behaviour").onmouseover = function() {mouseOver("behaviour")};
+document.getElementById("behaviour").onmouseout = function() {mouseOut("behaviour")};
+
+document.getElementById("safety").onmouseover = function() {mouseOver("safety")};
+document.getElementById("safety").onmouseout = function() {mouseOut("safety")};
+
+document.getElementById("etiquette").onmouseover = function() {mouseOver("etiquette")};
+document.getElementById("etiquette").onmouseout = function() {mouseOut("etiquette")};
+
+document.getElementById("nuurdleMe").onmouseover = function() {mouseOver("nuurdleMe")};
+document.getElementById("nuurdleMe").onmouseout = function() {mouseOut("nuurdleMe")};
+
+function mouseOver(elementName) {
+    document.getElementById(elementName).style.background = "#f9e8eb";
 }
 
-function mouseOut() {
-    document.getElementById("demo").style.background = "#fff";
-    document.getElementById("demo1").style.background = "#fff";
+function mouseOut(elementName) {
+    document.getElementById(elementName).style.background = "#fff";
 }
+
+
+
+
+
+
 </script>
