@@ -1,6 +1,11 @@
 
 
   <script>
+    var latitude;
+    var longitude;
+    var map;
+    var hasRun;
+
     function showDialogEnterAddress() {
 
       var okayBtn = document.getElementById('okay');
@@ -17,38 +22,114 @@
     function getCoordsFromAddress() {
       var inputAddress = document.getElementById('addressEntry').value;
       if (!inputAddress) {
-        alert("sorry you need to enter an address");
+        alert("sorry you need to enter an address so that we can search for nüurdles.");
       } else {
         // alert(inputAddress);
 
         var geocoder = new google.maps.Geocoder();
         geocoder.geocode({address: inputAddress}, function(results, status) {
             // Do something with the results
-            var latitude = results[0].geometry.location.lat();
-            var longitude = results[0].geometry.location.lng();
+
+            hasRun = false;
+            latitude = results[0].geometry.location.lat();
+            longitude = results[0].geometry.location.lng();
             // alert(results[0].geometry.location.lat());
             initMap(latitude,longitude,inputAddress);
         });
 
       }
+    }
 
+    function showNuurdles() {
+
+      // check user entered an address by checking whether latitude has been set or is null.
+      if (!latitude) { 
+        alert("you must select an address first, use the enter address button and enter an address then we can find nüurdles."); 
+      } else { 
+        // now check if user has already run a search and pins are showing for this address
+        // if not show the pins, else advise user to search again (getCoordsFromAddress sets flag to false)
+        if (!hasRun) {
+          hasRun = true;
+          showNuurdlePins();
+        } else {
+          alert("You'll need to enter a new address first then we can find nüurdles.");
+        }
+      }
       
     }
 
-  </script>
+    function showNuurdlePins() {
 
-  <script>
+        var locationOneLat = latitude + (Math.random() * (0.0008 - 0.002) + 0.002);
+        var locationOneLon = longitude + (Math.random() * (0.0008 - 0.002) + 0.002);
+        var locationOne = {lat: locationOneLat, lng: locationOneLon}; 
+
+        var locationTwoLat = latitude + (Math.random() * (-0.0008 - 0.002) + 0.002);
+        var locationTwoLon = longitude - (Math.random() * (-0.0008 - 0.002) + 0.002);
+        var locationTwo = {lat: locationTwoLat, lng: locationTwoLon}; 
+      
+        var locationThrLat = latitude - (Math.random() * (-0.0008 + 0.002) + 0.002);
+        var locationThrLon = longitude + (Math.random() * (-0.0008 + 0.002) - 0.002);
+        var locationThr = {lat: locationThrLat, lng: locationThrLon}; 
+      
+
+        var markerOne = new google.maps.Marker({
+          position: locationOne,
+          icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+          map: map,
+        });
+
+        var markerTwo = new google.maps.Marker({
+          position: locationTwo,
+          icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+          map: map,
+        });
+
+        var markerThr = new google.maps.Marker({
+          position: locationThr,
+          icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+          map: map,
+        });
+
+        markerOne.addListener('click', function() {
+          getNuurdleLinks();
+        });
+
+        markerTwo.addListener('click', function() {
+          getNuurdleLinks();
+        });
+
+        markerThr.addListener('click', function() {
+          getNuurdleLinks();
+        });
+
+    }
+
+
+    function getNuurdleLinks() {
+
+      var okayBtn = document.getElementById('okay');
+      var modalText = "There could be nüurdles posted at this location, download the app for free to see more and send back replies to these people's posts.";
+      $(".modal-message").html(modalText);
+      $('#getNuurdle').modal('show'); 
+
+      okayBtn.onclick = function() {
+        getCoordsFromAddress()
+      };
+      
+    }
+
     function initMap(latitude,longitude,address) {
       if (!latitude) { 
         var initMyLatLng = {lat: -33.861756, lng: 151.2108839}; 
-        var addressTitle = "Somewhere in Sydney!";
+        var addressTitle = "Somewhere in Sydney! Click 'enter address' and choose a location, then we can search for nüurdles posted nearby.";
       } else {
         var initMyLatLng = {lat: latitude, lng: longitude};
-        var addressTitle = address;
+        var addressTitle = "click 'find nüurdles' and we'll show you nüurdles people have posted nearby " + address +".";
       }
       
-      var map = new google.maps.Map(document.getElementById('map'), {
-       zoom: 16,
+      map = new google.maps.Map(document.getElementById('map'), {
+       zoom: 15,
        center: initMyLatLng
       });
 
@@ -130,8 +211,6 @@ function showPosition(position) {
 
   </script>
 
-
-
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtVo6lca3eyGxppXGIjIdHLwhiAQgTLmo&callback=initMap">
   </script>
@@ -145,7 +224,7 @@ function showPosition(position) {
           <input type="button" class="btn btn-primary" onclick="showDialogEnterAddress()" value="enter address"/>
         </div>
         <div class = "col-sm-6">
-          <input type="button" class="btn btn-primary" onclick="showDialogEnterAddress()" value="find nüurdles"/>
+          <input type="button" class="btn btn-primary" onclick="showNuurdles()" value="find nüurdles"/>
         </div>
       </div>
     </div>
@@ -158,27 +237,61 @@ function showPosition(position) {
 
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
-    
-
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h5 class="modal-title">enter an address to search for</h5>
+          <div class="col-12 cntr">
+            <h5 class="modal-title">enter address to search for</h5>
+          </div>
         </div>
         <div class="modal-body">
-          <input class="form-control input-sm" id="addressEntry" type="text" placeholder="enter an address here and click done" autofocus/>
+          <input class="form-control input-sm" id="addressEntry" type="text" placeholder="type address, click done. we'll find nüurdles." autofocus/>
         </div>
-
         <div class="modal-footer">
-
-
-          <button type="button" class="btn btn-primary" id="okay" data-dismiss="modal">done</button>
+          <div class="col-12 cntr">
+            <button type="button" class="btn btn-primary" id="okay" data-dismiss="modal">done</button>
+          </div>
         </div>
       </div>
-      
     </div>
   </div>
 
+
+
+  <div class="modal fade" id="getNuurdle" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <div class="col-12 cntr">
+            <h5 class="modal-title">download nüurdle</h5>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="modal-message"></div><br />
+          <div class="col-12">
+            <div class = "row cntr">
+
+                <a class="navbar-brand" target="_blank" href="https://itunes.apple.com/us/app/nuurdle/id856709280?ls=1&mt=8"/>
+                  <img src="/assets/appstore.jpg" class="store-link" alt="">
+                </a>
+
+                <a class="navbar-brand" target="_blank" href="https://play.google.com/store/apps/details?id=com.nuurdle.nuurdle"/>
+                  <img src="/assets/gplay.jpg" class="store-link find" alt="">
+                </a>
+
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <div class="col-12 cntr">
+            <button type="button" class="btn btn-primary" id="okay" data-dismiss="modal">done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   
