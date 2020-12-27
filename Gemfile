@@ -50,8 +50,8 @@ group :development do
 end
 
 
-gem 'popper_js', '~> 1.11.1'
-gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'popper_js', '>= 1.14.3'
+gem 'bootstrap', '>= 4.3.1'
 gem 'geocoder'
 
 source 'https://rails-assets.org' do
